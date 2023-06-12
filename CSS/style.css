@@ -1,0 +1,62 @@
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    background-image: url(../IMG/green_stylish_glitch_background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    position: relative;
+}
+
+header{
+    
+    color: bisque;
+    font-weight: bold;
+    font-size: x-large;
+    margin-top: 5%;
+    margin-bottom: 5%;
+       
+}
+h1{
+    color: orange;
+    
+}
+.challengeWord{
+    color: coral;
+    font-weight: bold;
+}
+.startGame{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20%;
+   
+}
+.startGame button{
+    color: rgb(242, 236, 66);
+    background-color: beige;
+    border: rgb(222, 74, 25) solid 8px;
+    border-radius: 20em;
+    padding: .5em;
+    margin-right: 5%;
+    font-size: x-large;
+    font-weight: bold;
+    
+}
+.keypadBtns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 5%;
+}
+.keypadBtns button{
+    color: yellow;
+    border: yellow .2em solid;
+    border-radius: 2em;
+    padding: 10px 20px;   
+    
+}
