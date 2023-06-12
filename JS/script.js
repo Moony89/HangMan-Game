@@ -12,9 +12,8 @@ const RemainingAttempts = 7;
 let wordSplit = randomWord.split('');
 let guess = [];  // variable pour stocker les lettres tapées par l'user;
 let hiddenWord = [];
-let hiddenWordJoin = hiddenWord.join('');
 
-const keypadBtns = document.querySelectorAll(".key");  // Récupérer la valeur des touches de clavier:
+const keypadBtns = document.querySelectorAll("button.key");  // Récupérer la valeur des touches de clavier:
 
 const resultDisplay = document.querySelector('.result');
 const resetGame = document.querySelector(".start");
@@ -23,21 +22,24 @@ const resetGame = document.querySelector(".start");
 
 // Générer des espaces '_' selon la longueur du mot choisi de manière random :
 for (let i = 0; i < wordSplit.length; i++) {
-    hiddenWord [i] = ' _ ';
+    hiddenWord.push(' _ ');
 };
-console.log(hiddenWordJoin);
-document.querySelector('.challengeWord').append(hiddenWordJoin); //! ne fonctionne pas (pour afficher le hiddenWord dans le p dédié)
+console.log(hiddenWord.join(''));
+document.querySelector('.challengeWord').append(hiddenWord.join('')); //! ne fonctionne pas (pour afficher le hiddenWord dans le p dédié)
 
+for (let i=0; i < keypadBtns.length; i++) {
+    console.log(keypadBtns[i].textContent)
+}
 //! ------- Functions -------
 
 // Fonction qui analyse les réponses :
 
-function analyzeGuess (guess, randomWord) {
+function analyzeGuess (keypadBtns, randomWord) {
 
    // guess = guess.toLowerCase();
 
     for(let i = 0; i < randomWord.length; i ++) {
-        if((guess).includes(randomWord[i])) {
+        if((keypadBtns[i].value).includes(randomWord[i])) {
                                                             //! utiliser le .replace ici..
         }
         else {
@@ -81,8 +83,8 @@ function startGame() {
 
 
 
-keypadBtns.addEventListener('click', analyzeGuess);
+keypadBtns.addEventListener('click', analyzeGuess());
     
-console.log(guess);
+
 
 resetGame.addEventListener('click', (startGame));
